@@ -236,7 +236,7 @@ function play_next_word() {
     var word = words_to_play[0];
     words_to_play.shift();
     $("#jquery_jplayer_1").jPlayer("setMedia", {
-        mp3: url_of(word)
+        wav: url_of(word)
     });
     $("#jquery_jplayer_1").jPlayer("play");
 }
@@ -252,7 +252,7 @@ function url_of(word) {
     if (document.location.host == "3e.org") {
         prefix = "/upspeakercortex/";
     }
-    return prefix + "words/" + word + ".mp3";
+    return prefix + "waves/" + word + ".wav";
 }
 
 function try_speak_words() {
@@ -295,7 +295,7 @@ function upspeakerPrepare() {
             $("#speak").prop('disabled', false);
         },
         swfPath: "Jplayer.swf",
-        supplied: "mp3",
+        supplied: "wav",
         ended: play_next_word
     });
     var p = getParameterByName('words');
